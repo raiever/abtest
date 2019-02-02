@@ -4,7 +4,7 @@ from google.cloud import bigquery
 from db_utils import connet_mysql
 from sqlalchemy import create_engine
 
-client = bigquery.Client(project='king-ds-recruit-candidate-131')
+client = bigquery.Client(project=)
 
 engine = create_engine("mysql+mysqldb://root:"+"password"+"@localhost/abtest", encoding='utf-8')
 conn = engine.connect()
@@ -12,7 +12,7 @@ conn = engine.connect()
 sql = """
 SELECT
 *
-FROM `king-ds-recruit-candidate-131.abtest.join_real_%s`
+FROM `.abtest.join_real_%s`
 WHERE conversion_date IS NOT NULL 
 """
 
